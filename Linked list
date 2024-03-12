@@ -1,0 +1,46 @@
+# Nodes address
+class node:
+  def __init__(self,num=0):
+    self.data = num
+    self.next = None
+# Operations for the nodes
+class LL:
+  def __init__(self):
+    self.head = None
+    self.temp = None
+    self.Length = 0
+  def insertnode(self,num=0):
+    newnode = node(num)
+    newnode.data = int(input("\nEnter the new node value: "))
+    print(newnode.data)
+    if self.head == None:
+      # List is empty
+      self.head = newnode
+      self.temp = newnode
+    else:
+      # list is present(not empty)
+      self.temp = self.head
+      while(self.temp.next != None): #last node
+        self.temp = self.temp.next
+      self.temp.next = newnode
+  def printList(self):
+    print("\nList is: ")
+    self.temp = self.head
+    while(self.temp != None):
+      print(self.temp.data,end="->")
+      
+      self.temp = self.temp.next
+    print("None")
+  
+  def deleteNode():
+    
+
+if __name__ == "__main__":
+  LLobj = LL()
+  LLobj.insertnode()
+  LLobj.insertnode()
+  LLobj.insertnode()
+  LLobj.insertnode()
+  LLobj.insertnode()
+  LLobj.printList()
+  LLobj.getLength()
