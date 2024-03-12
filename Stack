@@ -1,0 +1,59 @@
+class stackClass:
+  def __init__(self, limit):
+    self.Cap = limit
+    self.S = []
+    self.Top = 0
+    self.Bottom = 0
+ 
+  def push(self, val=0):
+    if self.Top == self.Cap:
+      return "Stack is Full"
+    self.S.append(val)
+    self.Top += 1
+    return f"Successfully Inserted {val} value"
+ 
+  def pop(self):
+    if self.Top == self.Bottom:
+      return "Stack is Empty"
+    ret = self.S[self.Top-1]
+    self.S.pop()
+    self.Top -= 1
+    return f"Popped {ret} element Successfully"
+   
+  def printStack(self):
+   
+    for i in range(self.Top -1, -1, -1):
+      print(self.S[i])
+  
+  def bP(str1):
+    if len(str1)%2 != 0:
+      return False
+    if str1[0] == ")" or str1[len(str1)-1] == "(":
+      return False
+    for i in str1:
+      if i == "(":
+        s.push(i)
+      elif i==")":
+        s.pop()
+   
+    return True
+ 
+
+if __name__ == "__main__":
+  sObj = stackClass(3)
+  s = stackClass(3)
+  print(s.bP())
+  print(bP("()()"))
+  print(sObj.push(10))
+  print(sObj.push(20))
+  print(sObj.push(30))
+  sObj.printStack()
+  print(sObj.push(40))
+  print(sObj.pop())
+  sObj.printStack()
+  print(sObj.pop())
+  sObj.printStack()
+  print(sObj.pop())
+  sObj.printStack()
+  print(sObj.pop())
+  sObj.printStack()
